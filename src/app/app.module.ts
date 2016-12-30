@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { SearchResultListComponent } from './search-result-list/search-result-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    SearchResultListComponent
   ],
   imports: [
     BrowserModule,
