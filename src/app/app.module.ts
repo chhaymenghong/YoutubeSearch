@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SearchResultListComponent } from './search-result-list/search-result-list.component';
 
+// service
+import { SearchService } from './search.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,7 @@ import { SearchResultListComponent } from './search-result-list/search-result-li
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ SearchService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
