@@ -1,0 +1,21 @@
+<div class="ui card">
+  <!-- img -->
+  <div class="image">
+    <img circular [src]="searchResult.imageUrl">
+  </div>
+  <div class="content">
+    <div class="header">
+      {{searchResult.title}}
+    </div>
+    <div class="description">
+      {{searchResult.description}}
+    </div>
+  </div>
+  <div class="extra content">
+    <button class="ui youtube button">
+      <i class="youtube icon"></i>
+      Youtube
+      <a [href]="searchResult.videoUrl"></a>
+    </button>
+  </div>
+</div>
