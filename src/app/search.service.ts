@@ -9,11 +9,14 @@ import { environment } from '../environments/environment'
 export class SearchService {
   public bs: BehaviorSubject<SearchResult[]> =
     new BehaviorSubject<SearchResult[]>([]);
+  public loading: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
 
   constructor( private http: Http ) {
   }
 
   getVideos( query: string ) {
+    this.loading.next(true);
     let params = new URLSearchParams();
     params.set('q', query );
     params.set('key', environment.apiToken );
@@ -22,13 +25,15 @@ export class SearchService {
     params.set('maxResults', '10');
 
     this.http.get( environment.baseUrl, { search: params } )
-      .do( resp => console.log( resp ) )
-      .do( resp => console.log( resp.json() ) )
       .map( resp => resp.json().items )
-      .subscribe( resultsJson => {
-        var searchResults: SearchResult[] = resultsJson.map( eResultJson => new SearchResult( eResultJson ) );
-        this.bs.next( searchResults );
-      } )
+      .subscribe(
+        resultsJson => {
+          var searchResults: SearchResult[] = resultsJson.map( eResultJson => new SearchResult( eResultJson ) );
+          this.bs.next( searchResults );
+          this.loading.next( false );
+        },
+        err => { console.log(err); this.loading.next( false ); }
+      )
   }
 
 }

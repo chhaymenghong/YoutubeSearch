@@ -7,8 +7,6 @@ import { SearchService } from '../search.service';
   selector: 'app-search-result-list',
   templateUrl: './search-result-list.component.html',
   styleUrls: ['./search-result-list.component.css'],
-  host: { class : 'ui centered grid' },
-  providers: [ SearchService ]
 })
 export class SearchResultListComponent implements OnInit {
   public result$: Observable<SearchResult[]>;
@@ -18,7 +16,6 @@ export class SearchResultListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchService.getVideos('cat');
   }
 
 }
