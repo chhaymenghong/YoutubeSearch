@@ -22,7 +22,7 @@ export class SearchService {
     params.set('key', environment.apiToken );
     params.set('part', 'snippet');
     params.set('type', 'video');
-    params.set('maxResults', '10');
+    params.set('maxResults', '50');
 
     this.http.get( environment.baseUrl, { search: params } )
       .map( resp => resp.json().items )
