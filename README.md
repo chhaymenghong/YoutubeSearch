@@ -12,4 +12,4 @@ For live demo, please use the following link.
 [Demo](https://chhaymenghong.github.io/YoutubeSearch/)
 
 # Sample image
-[Image](https://github.com/chhaymenghong/News/blob/master/src/assets/demoPicture.png)
+[Image](https://github.com/chhaymenghong/YoutubeSearch/blob/master/src/assets/demo.png)
