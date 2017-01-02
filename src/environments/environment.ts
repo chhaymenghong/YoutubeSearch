@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   baseUrl: 'https://www.googleapis.com/youtube/v3/search',
-  apiToken:'AIzaSyDOfT_BO81aEZScosfTYMruJobmpjqNeEk'
+  apiToken:'AIzaSyD3G40rHHroOm71MpjDEf7ItisWnyMDXgE'
 };
